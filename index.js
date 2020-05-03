@@ -121,7 +121,7 @@ module.exports = {
         var isPlaying = false
 
         cli.load(fileUrl, {
-          autoplay: true,
+          autoplay: false,
           contentType: stat.type,
           metadata: DIDLMetadata(fileUrl, stat.type, path.basename(filePath), subUrl)
         }, function (err, result) {
@@ -182,7 +182,7 @@ if (require.main === module) {
         console.log(err)
         process.exit()
       }
-      console.log(desc.device.friendlyName + ': ' + msg.Location)
+      console.log(desc.device.friendlyName + ': ' + msg.location)
     })
   } else {
     module.exports.renderMedia(opts._[0], opts.type, opts.address, opts.subtitle)
